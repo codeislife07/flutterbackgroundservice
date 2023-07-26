@@ -44,7 +44,7 @@ Future<void> initservice()async{
         onStart: onStart,
         autoStart: true,
         isForegroundMode: true,
-        notificationChannelId: "coding is life",
+        notificationChannelId: "coding is life",//comment this line if show white screen and app crash
         initialNotificationTitle: "Coding is life",
         initialNotificationContent: "Awsome Content",
         foregroundServiceNotificationId: 90
@@ -57,7 +57,7 @@ Future<void> initservice()async{
 }
 
 //onstart method
-@pragma("vm:enry-point")
+@pragma("vm:entry-point")
 void onStart(ServiceInstance service){
   DartPluginRegistrant.ensureInitialized();
 
@@ -86,7 +86,7 @@ void onStart(ServiceInstance service){
 }
 
 //iosbackground
-@pragma("vm:enry-point")
+@pragma("vm:entry-point")
 Future<bool> iosBackground(ServiceInstance service)async{
   WidgetsFlutterBinding.ensureInitialized();
   DartPluginRegistrant.ensureInitialized();
